@@ -8,6 +8,7 @@ import nltk
 from nltk.stem.porter import PorterStemmer
 import nltk
 nltk.download('punkt')
+nltk.download('punkt_tab')
 
 ps = PorterStemmer()
 stopwords = set([
@@ -27,7 +28,8 @@ def datatransform(text):
 # 1 convert lower case
     text=text.lower() 
 # 2 divide small parts
-    text=nltk.word_tokenize(text)
+    # text=nltk.word_tokenize(text)
+    text = text.split()
 # 3 special characters
     b=[]
     for n in text:
